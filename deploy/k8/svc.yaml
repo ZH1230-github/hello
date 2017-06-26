@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: hello
+  labels:
+    name: hello
+spec:
+  type: NodePort
+  ports:
+  - nodePort: 32688
+    targetPort: 8080
+    port: 8080
+  selector:
+    name: hello

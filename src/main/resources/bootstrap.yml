@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: hellodemo
+  profiles:
+    active: test
+  #cloud:
+    #config:
+      #name: hellodemo
+      #uri: ${SPRING_CONFIG_URI:http://ms:Microservice123!@20.26.33.119:32010}
+      #failFast: true
+
+eureka:
+  #instance:
+    #preferIpAddress: true
+    #leaseRenewalIntervalInSeconds: 10
+    #leaseExpirationDurationInSeconds: 30
+    #statusPageUrlPath: ${server.servlet-path:}${management.context-path}/info
+    #healthCheckUrlPath: ${server.servlet-path:}${management.context-path}/health
+    #metadataMap:
+      #user: ${security.user.name}
+      #password: ${security.user.password}
+      #management:
+        #context-path: ${server.servlet-path:}${management.context-path}
+  client:
+    serviceUrl:
+      #defaultZone: ${SPRING_EUREKA_URI:http://ms:Microservice123!@20.26.33.122:32010/eureka/}
+      defaultZone: http://localhost:8761/eureka/
+
+info:
+  description: Hello测试服务
+  version: 1.0
+  developer:
+  
+server: 
+  port: 8088
